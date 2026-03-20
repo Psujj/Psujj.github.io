@@ -1,0 +1,117 @@
+/* Global styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #0d0d0d;
+    color: #e0e0e0;
+    font-family: 'Courier New', monospace;
+    line-height: 1.7;
+}
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Navigation */
+nav {
+    margin-bottom: 2rem;
+}
+nav a {
+    text-decoration: none;
+    color: #7eb8f7;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+nav a:hover {
+    color: #fff;
+}
+
+/* Section title */
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #222;
+    padding-bottom: 0.5rem;
+    color: #7eb8f7;
+}
+
+/* Project cards */
+.project {
+    background-color: #111;
+    border: 2px solid #1e1e1e;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.project:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(126, 184, 247, 0.3);
+    border-color: #7eb8f7;
+}
+.project h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+.project p {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 0.75rem;
+}
+
+/* Tags */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+.tag {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: 6px;
+    border: 1px solid #2a2a2a;
+    color: #7eb8f7;
+}
+
+/* Footer */
+footer {
+    margin-top: 3rem;
+    padding: 2rem 0;
+    font-size: 0.8rem;
+    color: #555;
+    border-top: 1px solid #222;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .project {
+        padding: 1rem;
+    }
+    .project h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Expandable project content */
+.project-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+    margin-top: 0.5rem;
+}
+.project.expanded .project-details {
+    max-height: 1000px; /* big enough for content */
+    opacity: 1;
+}
+
+/* Make the project card clickable */
+.project {
+    cursor: pointer;
+}
